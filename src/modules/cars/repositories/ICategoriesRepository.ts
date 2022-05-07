@@ -1,11 +1,12 @@
-import { Category } from "../models/Category";
+import { Category } from "../entities/Category";
 
 interface ICreateCategoryDTO{
     name: string;
     description: string;
 }
 
-interface ICategoriesRepository {
+interface ICategoriesRepository
+ {
     findByName(name: string): Category;
     list(): Category[];
     create({name, description}: ICreateCategoryDTO):void;
